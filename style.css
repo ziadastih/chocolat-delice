@@ -194,24 +194,238 @@ li a {
   bottom: -20px;
   left: -20px;
   transform: rotate(-90deg);
-  opacity: 0.8;
+  opacity: 1;
+  width: 150px;
 }
 .image-pink-two {
   position: absolute;
   top: 10vh;
   right: -50px;
-  opacity: 0.8;
+  opacity: 1;
+  width: 150px;
 }
 .mixed-two {
   position: absolute;
 
   bottom: -20px;
   right: -20px;
-  opacity: 0.8;
+  opacity: 1;
+  width: 150px;
 }
 .chocolate-shop {
   height: 100vh;
   width: 100vw;
+}
+
+/* =============media for  less than  375px =========== */
+@media screen and (max-width: 380px) {
+  .slogan {
+    width: 60vw;
+    font-size: 24px;
+    line-height: 25px;
+  }
+  .image-container img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 1025px) and (min-width: 750px) {
+  .logo-toggle {
+    width: 300px;
+  }
+  .logo-toggle i {
+    display: none;
+  }
+  .logo {
+    font-size: 24px;
+  }
+  .nav-links-container {
+    transform: translateY(0);
+
+    position: static;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .nav-links-container ul {
+    background-color: transparent;
+    color: whitesmoke;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+  }
+  li {
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 0px 0px;
+  }
+  li a {
+    color: whitesmoke;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .nav-contact-us {
+    padding: 10px 25px;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: var(--btnBg);
+    color: var(--bgColor);
+  }
+  .image-container img {
+    display: block;
+    width: 120px;
+  }
+  .three-pieces {
+    position: absolute;
+    top: 600px;
+    left: 400px;
+  }
+  .hershey-piece-one {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 100px;
+  }
+  .image-pink-one {
+    position: absolute;
+    bottom: 200px;
+    left: 100px;
+    width: 100px;
+  }
+  .mixed-one {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+  }
+  .crunchy-piece {
+    width: 100px;
+    position: absolute;
+    top: 300px;
+    left: 600px;
+  }
+}
+@media screen and (min-width: 1026px) {
+  li a {
+    font-size: 20px;
+  }
+  .logo-toggle {
+    width: 300px;
+  }
+  .logo-toggle i {
+    display: none;
+  }
+  .logo {
+    font-size: 24px;
+  }
+  .nav-links-container {
+    transform: translateY(0);
+
+    position: static;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .nav-links-container ul {
+    background-color: transparent;
+    color: whitesmoke;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+  }
+  li {
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 0px 0px;
+  }
+  li a {
+    color: whitesmoke;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .nav-contact-us {
+    padding: 10px 25px;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: var(--btnBg);
+    color: var(--bgColor);
+  }
+  .home {
+    justify-content: space-between;
+  }
+  .hero-text {
+    width: 500px;
+    margin-left: 200px;
+    text-align: start;
+    align-items: flex-start;
+  }
+  .slogan {
+    font-size: 77px;
+    width: 500px;
+    line-height: 76px;
+  }
+  .hero-text p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  .button-container {
+    flex-direction: row;
+  }
+  .image-container img {
+    display: block;
+    position: absolute;
+  }
+
+  .three-pieces {
+    top: 200px;
+    left: 540px;
+    width: 250px;
+  }
+  .crunchy-piece {
+    bottom: -50px;
+    right: 500px;
+    width: 120px;
+  }
+  .hershey-piece-one {
+    bottom: 100px;
+    right: 250px;
+    width: 120px;
+  }
+  .hershey-piece-two {
+    right: -20px;
+    width: 120px;
+    opacity: 1;
+  }
+
+  .image-pink-two {
+    top: 200px;
+    right: 300px;
+    width: 120px;
+  }
+  .image-pink-one {
+    right: -30px;
+    bottom: -50px;
+    width: 120px;
+  }
+  .mixed-two {
+    right: -50px;
+    bottom: 350px;
+  }
+  .mixed-one {
+    bottom: 200px;
+    right: 500px;
+    width: 120px;
+  }
 }
 /* ================hover  ==================== */
 
