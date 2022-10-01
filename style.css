@@ -140,9 +140,12 @@ li a {
 
   color: whitesmoke;
 }
-
+.slogan-span {
+  opacity: 0;
+  transition: 300ms ease-in;
+}
 /* ===================hero description =================== */
-.hero-text p {
+.hero-description {
   font-family: var(--fontFam);
   font-style: normal;
   font-weight: 400;
@@ -150,7 +153,8 @@ li a {
   line-height: 21px;
   margin-bottom: 90px;
   color: whitesmoke;
-  opacity: 0.8;
+  opacity: 0;
+  transition: 500ms ease-in;
 }
 /* ===================btns container ============================== */
 .button-container {
@@ -159,6 +163,8 @@ li a {
   justify-content: center;
   flex-direction: column;
   gap: 30px;
+  transition: 500ms ease-in;
+  opacity: 0;
 }
 .contact-us-btn {
   text-decoration: none;
@@ -193,7 +199,6 @@ li a {
   bottom: 20px;
   left: 20px;
 
-  opacity: 1;
   width: 150px;
 }
 .image-two {
@@ -217,6 +222,11 @@ li a {
   right: 20px;
 
   width: 150px;
+}
+.image {
+  opacity: 0;
+  transition: 300ms ease-in;
+  transform: scale(5);
 }
 .chocolate-shop {
   min-height: 100vh;
@@ -421,7 +431,6 @@ li a {
   .image-four {
     right: 200px;
     top: 50%;
-    opacity: 1;
   }
 
   .image-five {
@@ -465,4 +474,17 @@ li a:hover {
 }
 .rotate-toggle {
   transform: rotate(-90deg);
+}
+
+.show-image {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.show-span {
+  opacity: 1;
+}
+
+.show-opacity {
+  opacity: 1;
 }
