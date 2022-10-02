@@ -17,7 +17,33 @@ window.addEventListener("DOMContentLoaded", () => {
     animateImages();
   }, 1000);
 });
+// ==============on scroll fix the contact btn ==============
 
+const contactBtn = document.querySelector(".contact-us-btn");
+window.addEventListener("scroll", function () {
+  let scrollHeight = window.pageYOffset;
+  console.log(scrollHeight);
+
+  const deviceWidth = screen.width;
+
+  if (scrollHeight > 500 && scrollHeight < 1000 && deviceWidth > 750) {
+    contactBtn.classList.add("fixed-brown-ipad-btn");
+  } else if (scrollHeight > 1000 && deviceWidth > 750) {
+    contactBtn.classList.add("fixed-pink-ipad-btn");
+  } else if (deviceWidth < 750 && scrollHeight > 500 && scrollHeight < 1600) {
+    contactBtn.innerHTML = `<i class="fa-brands fa-whatsapp"></i>`;
+    contactBtn.classList.add("fixed-brown-btn");
+  } else if (scrollHeight > 1600 && deviceWidth < 750) {
+    contactBtn.innerHTML = `<i class="fa-brands fa-whatsapp"></i>`;
+    contactBtn.classList.add("fixed-pink-btn");
+  } else {
+    contactBtn.innerHTML = `contact me`;
+    contactBtn.classList.remove("fixed-brown-ipad-btn");
+    contactBtn.classList.remove("fixed-pink-ipad-btn");
+    contactBtn.classList.remove("fixed-pink-btn");
+    contactBtn.classList.remove("fixed-brown-btn");
+  }
+});
 // ===============================carousel event listener =====================
 const slides = document.querySelectorAll(".slide");
 const nextBtn = document.querySelector(".nextBtn");
@@ -40,6 +66,8 @@ prevBtn.addEventListener("click", function () {
   carousel();
 });
 prevBtn.style.opacity = 0;
+
+// ==============sub images click ====================
 
 subImages.forEach((subimg) => {
   subimg.addEventListener("click", (e) => {
