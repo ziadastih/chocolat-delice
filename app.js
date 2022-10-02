@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
 const slides = document.querySelectorAll(".slide");
 const nextBtn = document.querySelector(".nextBtn");
 const prevBtn = document.querySelector(".prevBtn");
+const subImages = document.querySelectorAll(".sub-img");
 slides.forEach(function (slide, index) {
   slide.style.left = `${index * 100}%`;
 });
@@ -29,6 +30,9 @@ let counter = 0;
 nextBtn.addEventListener("click", function () {
   counter++;
   carousel();
+  subImages.forEach((subimg) => {
+    subimg.classList.remove("selected-img");
+  });
 });
 
 prevBtn.addEventListener("click", function () {
@@ -36,6 +40,21 @@ prevBtn.addEventListener("click", function () {
   carousel();
 });
 prevBtn.style.opacity = 0;
+
+subImages.forEach((subimg) => {
+  subimg.addEventListener("click", (e) => {
+    let newCounter = e.target.dataset.img;
+    counter = newCounter;
+    carousel();
+    subImages.forEach((secondImg) => {
+      if (secondImg === subimg) {
+        secondImg.classList.toggle("selected-img");
+      } else {
+        secondImg.classList.remove("selected-img");
+      }
+    });
+  });
+});
 
 // ====================================functions section ===============================
 const animateImages = () => {
