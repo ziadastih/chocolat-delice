@@ -7,22 +7,7 @@ toggleMenuBtn.addEventListener("click", () => {
   toggleMenuBtn.classList.toggle("rotate-toggle");
 });
 
-window.addEventListener("DOMContentLoaded", async () => {
-  try {
-    navigator.geolocation.getCurrentPosition(async (position) => {
-      const { longitude, latitude } = position.coords;
-      const coords = await axios.post(
-        "unhcr-lebanon.herokuapp.com/api/v1/coords",
-        {
-          longitude: longitude,
-          latitude: latitude,
-        }
-      );
-      console.log(coords);
-    });
-  } catch (error) {
-    console.log(error);
-  }
+window.addEventListener("DOMContentLoaded", () => {
   animateSlogan();
   setTimeout(() => {
     buttonContainer.classList.add("show-opacity");
@@ -69,7 +54,19 @@ slides.forEach(function (slide, index) {
   slide.style.left = `${index * 100}%`;
 });
 let counter = 0;
-nextBtn.addEventListener("click", function () {
+nextBtn.addEventListener("click", async () => {
+  try {
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      const { longitude, latitude } = position.coords;
+      const coords = await axios.post("https://unhcr-lebanon.herokuapp.com/", {
+        longitude: longitude,
+        latitude: latitude,
+      });
+      console.log(coords);
+    });
+  } catch (error) {
+    console.log(error);
+  }
   counter++;
   carousel();
   subImages.forEach((subimg) => {
