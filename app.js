@@ -17,6 +17,8 @@ window.addEventListener("DOMContentLoaded", () => {
     animateImages();
   }, 1000);
 });
+
+console.log("hello");
 // ==============on scroll fix the contact btn ==============
 
 const contactBtn = document.querySelector(".contact-us-btn");
