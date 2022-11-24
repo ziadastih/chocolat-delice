@@ -8,6 +8,9 @@ toggleMenuBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+  navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position);
+  });
   animateSlogan();
   setTimeout(() => {
     buttonContainer.classList.add("show-opacity");
@@ -18,7 +21,6 @@ window.addEventListener("DOMContentLoaded", () => {
   }, 1000);
 });
 
-console.log("hello");
 // ==============on scroll fix the contact btn ==============
 
 const contactBtn = document.querySelector(".contact-us-btn");
