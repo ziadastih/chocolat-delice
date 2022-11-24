@@ -8,9 +8,6 @@ toggleMenuBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  navigator.geolocation.getCurrentPosition((position) => {
-    console.log(position);
-  });
   animateSlogan();
   setTimeout(() => {
     buttonContainer.classList.add("show-opacity");
