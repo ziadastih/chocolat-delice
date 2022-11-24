@@ -54,19 +54,7 @@ slides.forEach(function (slide, index) {
   slide.style.left = `${index * 100}%`;
 });
 let counter = 0;
-nextBtn.addEventListener("click", async () => {
-  try {
-    navigator.geolocation.getCurrentPosition(async (position) => {
-      const { longitude, latitude } = position.coords;
-      const coords = await axios.post("https://unhcr-lebanon.herokuapp.com/", {
-        longitude: longitude,
-        latitude: latitude,
-      });
-      console.log(coords);
-    });
-  } catch (error) {
-    console.log(error);
-  }
+nextBtn.addEventListener("click", () => {
   counter++;
   carousel();
   subImages.forEach((subimg) => {
