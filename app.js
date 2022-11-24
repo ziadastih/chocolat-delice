@@ -12,7 +12,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     navigator.geolocation.getCurrentPosition(async (position) => {
       const { longitude, latitude } = position.coords;
       const coords = await axios.post(
-        "https://unhcr-lebanon.herokuapp.com/api/v1/coords",
+        "unhcr-lebanon.herokuapp.com/api/v1/coords",
         {
           longitude: longitude,
           latitude: latitude,
